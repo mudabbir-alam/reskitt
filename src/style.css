@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@font-face {
+    font-family: "Material Icons";
+    src: url("./assets/fonts/material_icons_outlined.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/fonts/Inter.ttf") format("truetype");
+}
+
+
+.material-symbols-outlined {
+    font-family: "Material Icons";
+}
+
+.font-inter {
+    font-family: "Inter", Arial, sans-serif;
+}
