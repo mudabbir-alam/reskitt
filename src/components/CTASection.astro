@@ -1,0 +1,43 @@
+---
+import Button from "./Button.astro";
+---
+
+<section
+    id="cta"
+    class="py-16 flex flex-col justify-center items-center border-border border-t-2"
+>
+    <h4 class="font-bold text-slate-600">TRUSTED BY STUDENTS FROM</h4>
+    <div class="flex gap-12 mt-6">
+        <div
+            title="KFUEIT"
+            class="bg-[url('/images/kfueit-logo.png')] bg-cover bg-center bg-background h-12 w-12"
+        >
+        </div>
+        <div
+            class="bg-[url('/images/muet-logo.png')] bg-cover bg-center bg-background h-12 w-12"
+        >
+        </div><div
+            class="bg-[url('/images/ned-logo.png')] bg-cover bg-center bg-background h-12 w-12"
+        >
+        </div><div
+            class="bg-[url('/images/nust-logo.png')] bg-cover bg-center bg-background h-12 w-12"
+        >
+        </div><div
+            class="bg-[url('/images/iub-logo.png')] bg-cover bg-center bg-background h-12 w-12"
+        >
+        </div>
+    </div>
+    <div
+        class="mt-16 w-4xl max-w-5xl bg-primary p-12 rounded-4xl flex justify-center items-center flex-col"
+    >
+        <h2 class="text-white text-5xl font-black mb-4">Ready to boost your grades?</h2>
+        <p class="text-xl text-center max-w-xl text-background font-medium mb-6">
+            Join over 100 students who are already using ResKitt to streamline
+            their studies and achieve their academic goals.
+        </p>
+        <div class="flex gap-6 items-center justify-between">
+            <Button href="#" moreClasses="bg-white text-primary font-black">Get Started for Free</Button>
+            <Button href="/about" moreClasses="text-primary font-black text-white border-blue-200 border-2">Learn More</Button>
+        </div>
+    </div>
+</section>

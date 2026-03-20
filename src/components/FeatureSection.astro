@@ -1,0 +1,42 @@
+---
+import FeatureSectionCard from "./FeatureSectionCard.astro";
+---
+
+<section id="features" class="py-16 border-border border-t-2">
+    <h2 class="text-center text-3xl font-black">
+        Everything you need to excel
+    </h2>
+    <p class="text-center text-xl mt-4">
+        Our comprehensive suite helps you manage your academic life with zero
+        friction.
+    </p>
+    <div class="grid grid-cols-4 justify-between gap-12 mt-12">
+        <FeatureSectionCard
+            iconColor="text-primary"
+            bgColor="bg-primary/20"
+            icon="calculate"
+            title="GPA Calculator"
+            description="Track your grades across semesters with our precise forecasting and weighted average tools"
+        />
+        <FeatureSectionCard
+            iconColor="text-green-700"
+            bgColor="bg-green-500/20"
+            title="Resource Library"
+            description="A curated collection of verified lecture notes, textbooks, and past papers for every major."
+        />
+        <FeatureSectionCard
+            iconColor="text-orange-600"
+            bgColor="bg-orange-500/20"
+            icon="picture_as_pdf"
+            title="PDF Tools"
+            description="Merge, split, compress, and annotate your study materials instantly without leaving your browser."
+            />
+        <FeatureSectionCard 
+            iconColor="text-purple-700"
+            bgColor="bg-purple-500/20"
+            icon="task"
+            title="Task Planner"
+            description="Plan tasks, set deadlines, track progress, and stay organized with a simple, efficient academic planner."
+        />
+    </div>
+</section>

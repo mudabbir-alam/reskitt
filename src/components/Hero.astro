@@ -1,0 +1,30 @@
+---
+import Button from "../components/Button.astro";
+---
+
+<section id="hero" class="grid grid-cols-2 gap-16">
+    <div id="hero-left" class="flex flex-col gap-4">
+        <h1 class="text-7xl font-black tracking-tight">
+            Your All-in-One <span class="text-primary">Student</span> Resources Kit
+        </h1>
+        <p class="text-xl mt-6 text-slate-700">
+            Access premium resources, calculate your academic goals, and master
+            your complex subjects with ResKitt's curated suite of digital study
+            tools.
+        </p>
+        <Button
+            href="#"
+            moreClasses="flex text-white font-bold items-center justify-center gap-2 w-1/2 mt-4"
+            ><span>Get Started</span>
+            <span class="material-symbols-outlined font-medium text-2xl"
+                >arrow_forward</span
+            ></Button
+        >
+    </div>
+    <div id="hero-right">
+        <div
+            class="h-7/8 aspect-square rounded-xl bg-slate-300 bg-[url('/images/hero-right.jpg')] bg-center bg-size-[80%] bg-no-repeat"
+        >
+        </div>
+    </div>
+</section>

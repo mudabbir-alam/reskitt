@@ -1,0 +1,42 @@
+---
+
+---
+
+<header class="w-full flex justify-center bg-white/80 h-20 px-12 sticky top-0">
+    <div class="flex max-w-7xl justify-between items-center w-full h-full">
+        <a id="logo" href="/" class="flex justify-between gap-2">
+            <div
+                class="material-symbols-outlined bg-primary text-white leading-none h-10 w-10 text-2xl flex justify-center items-center rounded-md"
+            >
+                auto_stories
+            </div>
+            <div class="font-inter flex items-center text-2xl font-black">
+                ResKitt
+            </div>
+        </a>
+        <nav class="flex gap-8 font-medium">
+            <a href="/tools">Tools</a>
+            <a href="/notes">Notes</a>
+            <a href="/books">Books</a>
+            <a href="/privacy-policy">Privacy Policy</a>
+            <a href="/about">About</a>
+        </nav>
+        <button
+            id="themeBtn"
+            class="material-symbols-outlined cursor-pointer bg-slate-200 h-10 w-10 text-xl rounded-lg"
+        ></button>
+    </div>
+</header>
+
+<script>
+    let isDarkMode = false;
+    const btn = document.getElementById("themeBtn")!;
+    btn.innerText = "dark_mode";
+    btn.addEventListener("click", () => {
+        document.documentElement.classList.toggle("dark");
+        isDarkMode = !isDarkMode;
+        isDarkMode
+            ? (btn.innerText = "light_mode")
+            : (btn.innerText = "dark_mode");
+    });
+</script>
