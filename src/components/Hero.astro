@@ -2,19 +2,19 @@
 import Button from "../components/Button.astro";
 ---
 
-<section id="hero" class="grid grid-cols-2 gap-16">
+<section id="hero" class="grid grid-cols-1 py-16 lg:grid-cols-2 gap-16 items-center lg:items-start">
     <div id="hero-left" class="flex flex-col gap-4">
-        <h1 class="text-7xl font-black tracking-tight">
+        <h1 class="text-6xl md:text-7xl font-black tracking-tight dark:text-slate-100">
             Your All-in-One <span class="text-primary">Student</span> Resources Kit
         </h1>
-        <p class="text-xl mt-6 text-slate-700">
+        <p class="text-xl mt-2 text-slate-700 dark:text-slate-500">
             Access premium resources, calculate your academic goals, and master
             your complex subjects with ResKitt's curated suite of digital study
             tools.
         </p>
         <Button
             href="#"
-            moreClasses="flex text-white font-bold items-center justify-center gap-2 w-1/2 mt-4"
+            moreClasses="flex text-white font-bold items-center justify-center gap-2 md:w-1/2 mt-4"
             ><span>Get Started</span>
             <span class="material-symbols-outlined font-medium text-2xl"
                 >arrow_forward</span

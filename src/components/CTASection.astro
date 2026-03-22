@@ -1,43 +1,43 @@
 ---
 import Button from "./Button.astro";
+const uniLogoURL = [
+    "/images/kfueit-logo.png",
+    "/images/muet-logo.png",
+    "/images/ned-logo.png",
+    "/images/nust-logo.png",
+    "/images/iub-logo.png"
+]
 ---
 
 <section
     id="cta"
-    class="py-16 flex flex-col justify-center items-center border-border border-t-2"
+    class="py-16 mx-auto flex flex-col justify-center items-center border-border border-t-2"
 >
-    <h4 class="font-bold text-slate-600">TRUSTED BY STUDENTS FROM</h4>
-    <div class="flex gap-12 mt-6">
-        <div
-            title="KFUEIT"
-            class="bg-[url('/images/kfueit-logo.png')] bg-cover bg-center bg-background h-12 w-12"
-        >
-        </div>
-        <div
-            class="bg-[url('/images/muet-logo.png')] bg-cover bg-center bg-background h-12 w-12"
-        >
-        </div><div
-            class="bg-[url('/images/ned-logo.png')] bg-cover bg-center bg-background h-12 w-12"
-        >
-        </div><div
-            class="bg-[url('/images/nust-logo.png')] bg-cover bg-center bg-background h-12 w-12"
-        >
-        </div><div
-            class="bg-[url('/images/iub-logo.png')] bg-cover bg-center bg-background h-12 w-12"
-        >
-        </div>
+    <h4 class="font-bold text-slate-600 dark:text-slate-400">
+        TRUSTED BY STUDENTS FROM
+    </h4>
+    <div class="flex justify-around gap-4 mt-6 p-4 dark:bg-slate-800 w-full max-w-3xl">
+        {uniLogoURL.map((item) => <div class={`bg-[url('${item}')] bg-cover bg-center h-10 md:h-12 aspect-square`}></div>)}
     </div>
     <div
-        class="mt-16 w-4xl max-w-5xl bg-primary p-12 rounded-4xl flex justify-center items-center flex-col"
+        class="mt-16 w-full max-w-5xl bg-primary p-6 md:p-12 rounded-4xl flex justify-center items-center flex-col"
     >
-        <h2 class="text-white text-5xl font-black mb-4">Ready to boost your grades?</h2>
-        <p class="text-xl text-center max-w-xl text-background font-medium mb-6">
+        <h2 class="text-white text-4xl md:text-5xl text-center font-black mb-4">
+            Ready to boost your grades?
+        </h2>
+        <p class="text-lg md:text-xl text-center max-w-xl text-slate-200 font-medium mb-6">
             Join over 100 students who are already using ResKitt to streamline
             their studies and achieve their academic goals.
         </p>
-        <div class="flex gap-6 items-center justify-between">
-            <Button href="#" moreClasses="bg-white text-primary font-black">Get Started for Free</Button>
-            <Button href="/about" moreClasses="text-primary font-black text-white border-blue-200 border-2">Learn More</Button>
+        <div class="grid grid-cols-1 sm:grid-cols-2 sm:gap-4 gap-0 w-full">
+            <Button href="#" moreClasses="bg-white text-primary font-black"
+                >Get Started for Free</Button
+            >
+            <Button
+                href="/about"
+                moreClasses="text-primary font-black text-white border-blue-200 border-2"
+                >Learn More</Button
+            >
         </div>
     </div>
 </section>
