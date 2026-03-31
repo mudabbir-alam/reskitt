@@ -1,5 +1,5 @@
 ---
-const currentPath = new URL(Astro.url).pathname;
+const currentPath = Astro.url.pathname;
 ---
 
 <header
@@ -21,13 +21,13 @@ const currentPath = new URL(Astro.url).pathname;
             </div>
         </a>
         <nav class="md:flex gap-8 font-medium hidden">
-            <a href="/tools" class={`hover:text-primary nav-link ${currentPath === "/tools" ? "active" : ""}`}>Tools</a>
-            <a href="/notes" class={`hover:text-primary nav-link ${currentPath === "/notes" ? "active" : ""}`}>Notes</a>
-            <a href="/books" class={`hover:text-primary nav-link ${currentPath === "/books" ? "active" : ""}`}>Books</a>
-            <a href="/privacy-policy" class={`hover:text-primary nav-link ${currentPath === "/privacy-policy" ? "active" : ""}`}
+            <a href="/tools" class="hover:text-primary nav-link">Tools</a>
+            <a href="/notes" class="hover:text-primary nav-link">Notes</a>
+            <a href="/books" class="hover:text-primary nav-link">Books</a>
+            <a href="/privacy-policy" class="hover:text-primary nav-link"
                 >Privacy Policy</a
             >
-            <a href="/about" class={`hover:text-primary nav-link ${currentPath === "/about" ? "active" : ""}`}>About</a>
+            <a href="/about" class="hover:text-primary nav-link">About</a>
         </nav>
         <button
             id="themeBtn"
@@ -47,4 +47,14 @@ const currentPath = new URL(Astro.url).pathname;
             ? (btn.innerText = "light_mode")
             : (btn.innerText = "dark_mode");
     });
+</script>
+
+<script>
+  const currentPath = window.location.pathname.replace(/\/$/, ""); // strip trailing slash
+  document.querySelectorAll(".nav-link").forEach(link => {
+    const href = link.getAttribute("href") ?? "";
+    if (currentPath === href || currentPath.startsWith(href + "/")) {
+      link.classList.add("active");
+    }
+  });
 </script>
