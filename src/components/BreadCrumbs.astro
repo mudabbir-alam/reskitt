@@ -1,0 +1,43 @@
+---
+const { pathname } = Astro.url;
+const pathParts = pathname.split("/").filter(Boolean);
+let currentPath = "";
+const breadCrumbs = pathParts.map((part) => {
+    currentPath += `/${part}`;
+    console.log(currentPath);
+    return {
+        name: part.replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()),
+        url: currentPath,
+    };
+});
+---
+
+{
+    pathname === "/" ? null : (
+        <div class="px-6 md:px-12 w-full mb-6">
+            <nav class="pt-6 text-sm mx-auto w-full max-w-7xl">
+                <a
+                    href="/"
+                    class="hover:text-primary text-slate-500 font-medium"
+                >
+                    Home
+                </a>
+                {breadCrumbs.map((crumb, index) => (
+                    <>
+                        <span> &gt; </span>
+                        {index === breadCrumbs.length - 1 ? (
+                            <span class="font-bold">{crumb.name}</span>
+                        ) : (
+                            <a
+                                href={crumb.url}
+                                class="font-medium hover:text-primary text-slate-500"
+                            >
+                                {crumb.name}
+                            </a>
+                        )}
+                    </>
+                ))}
+            </nav>
+        </div>
+    )
+}

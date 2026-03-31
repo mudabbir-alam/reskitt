@@ -1,0 +1,153 @@
+---
+import Button from "../components/Button.astro";
+import PageSection from "../components/PageSection.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+const headings = [
+    { text: "Information We Collect", icon: "info" },
+    { text: "How We Use Your Information", icon: "analytics" },
+    { text: "Cookies and Tracking Technologies", icon: "cookie" },
+    { text: "Third Party Advertising", icon: "ad" },
+    { text: "Data Protection", icon: "shield_lock" },
+    { text: "Your Rights", icon: "shield_person" },
+    { text: "Children Information", icon: "child_care" },
+    { text: "Changing To This Privacy Policy", icon: "published_with_changes" },
+];
+const ids = headings.map((h) => h.text.replaceAll(" ", "-").toLowerCase());
+---
+
+<BaseLayout title="Privacy Policy - ResKitt" showSidebar headings={headings}>
+    <div slot="post-toc" class="rounded-lg border-border border bg-slate-200/80 dark:bg-slate-800 p-4 mt-16">
+        <p class="text-sm">Need an offline copy?</p>
+        <Button moreClasses="bg-white dark:bg-slate-900 dark:text-slate-200 w-full flex justify-center gap-2 font-bold !text-sm py-2" size="sm"><span class="material-symbols-outlined text-base">download</span>Download PDF</Button>
+    </div>
+    <section id="hero" class="pb-8">
+        <div
+            class="inline-flex justify-between items-center gap-2 text-sm bg-primary/20 px-2 rounded-xl"
+        >
+            <span class="rounded-full bg-primary h-2 w-2"></span><span
+                >Latest Update: March 31, 2026</span
+            >
+        </div>
+        <h1 class="text-4xl sm:text-5xl dark:text-slate-100 font-black my-4">
+            Privacy Policy
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400">
+            Welcome to ResKitt. Your privacy is important to us. This Privacy
+            Policy explains how we collect, use, and protect your information
+            when you visit our website.
+        </p>
+    </section>
+    <PageSection id={ids[0]} heading={headings[0].text}>
+        <p>
+            We only collect personal information when you voluntarily provide it
+            to us. This includes:
+            <ul class="list-disc ml-12">
+                <li>Name</li>
+                <li>Email Address</li>
+            </ul>
+        </p>
+        <p>
+            This information is collected when you contact us through forms or
+            email.
+        </p>
+        <p>
+            We may also automatically collect non-personal information such as:
+        </p>
+        <ul class="list-disc ml-12">
+            <li>Browser type</li>
+            <li>Device information</li>
+            <li>IP address</li>
+            <li>Pages visited</li>
+        </ul>
+    </PageSection>
+    <PageSection id={ids[1]} heading={headings[1].text}>
+        <p>We use the information we collect to:</p>
+        <ul class="list-disc ml-12">
+            <li>Respond to your messages or inquiries</li>
+            <li>Improve our website and user experience</li>
+            <li>Improve our website and user experience</li>
+        </ul>
+        <p>
+            We do not <span class="font-bold">sell, trade, or rent</span> your personal
+            information to others.
+        </p>
+    </PageSection>
+    <PageSection id={ids[2]} heading={headings[2].text}>
+        <p>
+            Our website may use cookies to enhance your experience. Cookies are
+            small files stored on your device that help us:
+        </p>
+        <ul class="ml-12 list-disc">
+            <li>Understand user behavior</li>
+            <li>Improve website functionality</li>
+            <li>Serve relevant advertisements</li>
+        </ul>
+        <p>You can choose to disable cookies through your browser settings.</p>
+    </PageSection>
+    <PageSection id={ids[3]} heading={headings[3].text}>
+        <p>
+            We may use third-party advertising services (such as Google AdSense)
+            to display ads.
+        </p>
+        <p>
+            These third-party vendors may use cookies (such as the DoubleClick
+            cookie) to show ads based on your visits to this and other websites.
+        </p>
+        <p>
+            You can opt out of personalized advertising by visiting:<br />
+            <a
+                href="https://www.google.com/settings/ads"
+                class="text-blue-500 visited:text-purple-500 underline"
+                >https://www.google.com/settings/ads</a
+            >
+        </p>
+        <p>
+            Please note that we do not control how third-party services collect
+            or use your data.
+        </p>
+    </PageSection>
+    <PageSection id={ids[4]} heading={headings[4].text}>
+        <p>
+            We take reasonable steps to protect your personal information.
+            However, no method of transmission over the internet is 100% secure.
+        </p>
+    </PageSection>
+    <PageSection id={ids[5]} heading={headings[5].text}>
+        <p>You have the right to:</p>
+        <ul class="list-disc ml-12">
+            <li>Request access to your personal data</li>
+            <li>Request correction or deletion of your data</li>
+            <li>Contact us regarding any privacy concerns</li>
+        </ul>
+    </PageSection>
+    <PageSection id={ids[6]} heading={headings[6].text}>
+        <p>
+            ResKitt is not intended for children under the age of 13. We do not
+            knowingly collect personal information from children.
+        </p>
+    </PageSection>
+    <PageSection
+        id={ids[7]}
+        heading={headings[7].text}
+    >
+        <p>
+            We may update this Privacy Policy from time to time. Any changes
+            will be posted on this page with an updated effective date.
+        </p>
+    </PageSection>
+    <section class="my-12 p-8 bg-slate-900 dark:bg-slate-800 border-border border text-slate-100 rounded-xl">
+        <h3 class="font-bold text-2xl mb-3">Still have questions?</h3>
+        <p class="text-slate-300 mb-3">
+            If you have questions about how we handle user data or wish to
+            exercise your data rights, our privacy team is here to help.
+        </p>
+        <div class="flex">
+            <Button
+                href="/contact"
+                size="lg"
+                moreClasses="font-bold text-white w-full sm:w-auto"
+                >Contact Us</Button
+            >
+        </div>
+    </section>
+</BaseLayout>

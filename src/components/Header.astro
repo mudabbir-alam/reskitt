@@ -1,25 +1,33 @@
 ---
-
+const currentPath = new URL(Astro.url).pathname;
 ---
 
-<header class="w-full flex justify-center bg-white/80 dark:bg-black/80 backdrop-blur h-16 md:h-20 px-6 md:px-12 sticky top-0">
-    <div class="flex max-w-7xl justify-between items-center w-full h-full mx-auto">
+<header
+    class="w-full flex justify-center bg-white/80 dark:bg-black/80 backdrop-blur h-16 md:h-20 px-6 md:px-12 sticky top-0 z-10"
+>
+    <div
+        class="flex max-w-7xl justify-between items-center w-full h-full mx-auto"
+    >
         <a id="logo" href="/" class="flex justify-between gap-2">
             <div
                 class="material-symbols-outlined bg-primary text-white leading-none h-10 w-10 text-2xl flex justify-center items-center rounded-md"
             >
                 auto_stories
             </div>
-            <div class="font-inter flex items-center text-xl md:text-2xl font-black">
+            <div
+                class="text-foreground font-inter flex items-center text-xl md:text-2xl font-black"
+            >
                 ResKitt
             </div>
         </a>
         <nav class="md:flex gap-8 font-medium hidden">
-            <a href="/tools" class="hover:text-primary">Tools</a>
-            <a href="/notes" class="hover:text-primary">Notes</a>
-            <a href="/books" class="hover:text-primary">Books</a>
-            <a href="/privacy-policy" class="hover:text-primary">Privacy Policy</a>
-            <a href="/about" class="hover:text-primary">About</a>
+            <a href="/tools" class={`hover:text-primary nav-link ${currentPath === "/tools" ? "active" : ""}`}>Tools</a>
+            <a href="/notes" class={`hover:text-primary nav-link ${currentPath === "/notes" ? "active" : ""}`}>Notes</a>
+            <a href="/books" class={`hover:text-primary nav-link ${currentPath === "/books" ? "active" : ""}`}>Books</a>
+            <a href="/privacy-policy" class={`hover:text-primary nav-link ${currentPath === "/privacy-policy" ? "active" : ""}`}
+                >Privacy Policy</a
+            >
+            <a href="/about" class={`hover:text-primary nav-link ${currentPath === "/about" ? "active" : ""}`}>About</a>
         </nav>
         <button
             id="themeBtn"

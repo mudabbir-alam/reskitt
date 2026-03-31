@@ -1,0 +1,45 @@
+---
+const headings: { text: string; slug: string; icon: string }[] =
+    Astro.props.headings || [];
+---
+
+<nav class="lg:w-64 flex flex-col gap-4">
+    <h3 class="font-bold text-sm text-slate-600 dark:text-slate-300">TABLE OF CONTENTS</h3>
+    <ul class="space-y-3 text-sm">
+        {
+            headings.map((h) => (
+                <li>
+                    <a href={`#${h.text.replaceAll(" ", "-").toLowerCase()}`} class="toc-link flex gap-1 rounded items-center px-2 py-1">
+                        <span class="material-symbols-outlined text-xl">{h.icon}</span>
+                        {h.text}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</nav>
+
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  const links = document.querySelectorAll(".toc-link");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+
+        links.forEach((link) => {
+          link.classList.remove("active");
+
+          if (link.getAttribute("href") === `#${id}`) {
+            link.classList.add("active");
+          }
+        });
+      }
+    });
+  }, {
+    rootMargin: "-20% 0px -70% 0px"
+  });
+
+  sections.forEach((section) => observer.observe(section));
+</script>

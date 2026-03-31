@@ -1,19 +1,48 @@
 ---
 import "../style.css";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro"
-const {title = "ResKitt"} = Astro.props;
+import Footer from "../components/Footer.astro";
+import TableOfContents from "../components/TableOfContents.astro";
+import BreadCrumbs from "../components/BreadCrumbs.astro";
+const {
+    title = "ResKitt",
+    showSidebar = false,
+    showTOC = true,
+    headings = [],
+} = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-us" class="scroll-smooth">
     <head>
         <title>{title}</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
-    <body class="bg-background text-foreground font-lexend min-h-screen transition-colors duration-300 ease-in-out">
-        <Header/>
-        <slot/>
-        <Footer/>
+    <body class="bg-background text-foreground font-lexend min-h-screen">
+        <Header />
+        <BreadCrumbs />
+        <div class="px-6 md:px-12">
+            <div
+                class="w-full h-full mb-12 max-w-7xl flex justify-start gap-8 mx-auto relative"
+            >
+                {
+                    showSidebar && (
+                        <aside class="self-stretch border-r pr-4 border-border">
+                            <div class="sticky top-24">
+                                <slot name="pre-toc"/>
+                                    {showTOC && (
+                                        <TableOfContents headings={headings} />
+                                    )}
+                                <slot name="post-toc" />
+                            </div>
+                        </aside>
+                    )
+                }
+                <main class={showSidebar ? "max-w-3xl" : ""}>
+                    <slot />
+                </main>
+            </div>
+        </div>
+        <Footer />
     </body>
 </html>

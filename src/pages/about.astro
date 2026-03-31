@@ -2,136 +2,138 @@
 import FeatureSectionCard from "../components/FeatureSectionCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/Button.astro";
+import BreadCrumbs from "../components/BreadCrumbs.astro";
 ---
 
 <BaseLayout title="About - ResKitt">
-    <main class="px-6 mx-auto max-w-7xl">
-        <section id="hero-section" class="py-16">
-            <h1
-                class="text-5xl md:text-7xl text-center my-4 font-black dark:text-slate-50"
-            >
-                About <span class="text-primary">ResKitt</span>
-            </h1>
-            <h2 class="text-2xl text-center">
-                Your all-in-one resources kit for smarter learning.
-            </h2>
-        </section>
-        <section
-            id="what-is-reskitt"
-            class="py-16 grid lg:grid-cols-5 lg:gap-16 gap-8 items-center border-t-2 border-border"
+    <section id="hero-section" class="py-8">
+        <h1
+            class="text-5xl md:text-7xl text-center my-4 font-black dark:text-slate-50"
         >
-            <div
-                id="left"
-                class="lg:col-span-3 flex flex-col bg-slate-200 dark:bg-slate-800 border-border border px-4 py-8 lg:p-12 rounded-xl justify-center min-h-full"
-            >
-                <h3 class="text-3xl font-bold mb-4 dark:text-slate-50">What is ResKitt?</h3>
-                <p class="mb-3 text-slate-600 dark:text-slate-400">
-                    Reskitt is an all-in-one platform built for students who
-                    want everything in one place. Instead of jumping between
-                    different websites and apps, we bring all the tools you need
-                    - notes, task planner, GPA calculator, word counter, books,
-                    and more - together in one simple, easy-to-use website.
-                </p>
-                <p class="text-slate-600 dark:text-slate-400">
-                    Our goal is to help you stay organized, save time, and focus
-                    on what actually matters - learning. Whether you're managing
-                    assignments, calculating your grades, or looking for study
-                    resources, Reskitt has you covered.
-                </p>
-            </div>
-            <div id="right" class="lg:col-span-2 aspect-square min-h-full">
-                <img
-                    src="/images/about.jpg"
-                    alt="about-image"
-                    class="rounded-xl"
-                />
-            </div>
-        </section>
-        <section class="py-16 border-t-2 border-border">
-            <h3 class="text-3xl mb-4 font-bold dark:text-slate-50">What we offer?</h3>
+            About <span class="text-primary">ResKitt</span>
+        </h1>
+        <h2 class="text-2xl text-center">
+            Your all-in-one resources kit for smarter learning.
+        </h2>
+    </section>
+    <section
+        id="what-is-reskitt"
+        class="py-16 grid lg:grid-cols-12 gap-12 items-center border-t-2 border-border"
+    >
+        <div
+            id="left"
+            class="lg:col-span-7 flex flex-col bg-slate-200 dark:bg-slate-800 border-border border px-4 py-8 lg:p-10 rounded-xl justify-center"
+        >
+            <h3 class="text-3xl font-bold mb-4 dark:text-slate-50">
+                What is ResKitt?
+            </h3>
+            <p class="mb-3 text-slate-600 dark:text-slate-400">
+                Reskitt is an all-in-one platform built for students who want
+                everything in one place. Instead of jumping between different
+                websites and apps, we bring all the tools you need - notes, task
+                planner, GPA calculator, word counter, books, and more -
+                together in one simple, easy-to-use website.
+            </p>
             <p class="text-slate-600 dark:text-slate-400">
-                A curated ecosystem of tools designed to elevate every aspect of
-                your academic journey.
+                Our goal is to help you stay organized, save time, and focus on
+                what actually matters - learning. Whether you're managing
+                assignments, calculating your grades, or looking for study
+                resources, Reskitt has you covered.
             </p>
-            <div class="grid md:grid-cols-3 gap-8 mt-6">
-                <FeatureSectionCard
-                    iconColor="text-primary"
-                    bgColor="bg-primary/20"
-                    icon="calculate"
-                    title="GPA Calculator"
-                    description="Track your grades across semesters with our precise forecasting and weighted average tools"
-                />
-                <FeatureSectionCard
-                    iconColor="text-green-700"
-                    bgColor="bg-green-500/20"
-                    title="Resource Library"
-                    description="A curated collection of verified lecture notes, textbooks, and past papers for every major."
-                />
-                <FeatureSectionCard
-                    iconColor="text-orange-600"
-                    bgColor="bg-orange-500/20"
-                    icon="picture_as_pdf"
-                    title="PDF Tools"
-                    description="Merge, split, compress, and annotate your study materials instantly without leaving your browser."
-                />
-                <FeatureSectionCard
-                    iconColor="text-purple-700"
-                    bgColor="bg-purple-500/20"
-                    icon="task"
-                    title="Task Planner"
-                    description="Plan tasks, set deadlines, track progress, and stay organized with a simple, efficient academic planner."
-                />
-            </div>
-        </section>
-        <section id="our-story" class="py-16 border-y-2 border-border">
-            <h3 class="text-3xl font-bold mb-6 dark:text-slate-50">
-                Our Story
-            </h3>
-            <div class="pl-4 border-l border-border mb-8">
-                <h4 class="text-xl italic font-medium dark:text-slate-100">
-                    The Problem
-                </h4>
-                <p class="mt-2 text-slate-600 dark:text-slate-400">
-                    We noticed that students were juggling over seven different
-                    platforms just to manage a single semester. Valuable
-                    cognitive energy was being wasted on platform switching
-                    rather than learning.
-                </p>
-            </div>
-            <div class="pl-4 border-l border-border">
-                <h4 class="text-xl italic mt-4 font-medium dark:text-slate-100">
-                    The Solution
-                </h4>
-                <p class="mt-2 text-slate-600 dark:text-slate-400">
-                    ResKitt was born from the desire to create a "Digital
-                    Curator" - a single, beautiful space that intelligently
-                    organizes the chaos of academia into a cohesive, editorial
-                    experience.
-                </p>
-            </div>
-        </section>
-        <section
-            id="our-mission"
-            class="flex flex-col max-w-5xl mx-auto items-center justify-center my-16 border border-border rounded-2xl py-8 px-4 bg-slate-200 dark:bg-slate-800"
+        </div>
+
+        <img
+            src="/images/about.jpg"
+            alt="about-image"
+            class="mx-auto rounded-xl lg:col-span-5 lg:max-h-92"
+        />
+    </section>
+    <section class="py-16 border-t-2 border-border">
+        <h3 class="text-3xl mb-4 font-bold dark:text-slate-50">
+            What we offer?
+        </h3>
+        <p class="text-slate-600 dark:text-slate-400">
+            A curated ecosystem of tools designed to elevate every aspect of
+            your academic journey.
+        </p>
+        <div class="grid md:grid-cols-3 gap-8 mt-6">
+            <FeatureSectionCard
+                iconColor="text-primary"
+                bgColor="bg-primary/20"
+                icon="calculate"
+                title="GPA Calculator"
+                description="Track your grades across semesters with our precise forecasting and weighted average tools"
+            />
+            <FeatureSectionCard
+                iconColor="text-green-700"
+                bgColor="bg-green-500/20"
+                title="Resource Library"
+                description="A curated collection of verified lecture notes, textbooks, and past papers for every major."
+            />
+            <FeatureSectionCard
+                iconColor="text-orange-600"
+                bgColor="bg-orange-500/20"
+                icon="picture_as_pdf"
+                title="PDF Tools"
+                description="Merge, split, compress, and annotate your study materials instantly without leaving your browser."
+            />
+            <FeatureSectionCard
+                iconColor="text-purple-700"
+                bgColor="bg-purple-500/20"
+                icon="task"
+                title="Task Planner"
+                description="Plan tasks, set deadlines, track progress, and stay organized with a simple, efficient academic planner."
+            />
+        </div>
+    </section>
+    <section id="our-story" class="py-16 border-y-2 border-border">
+        <h3 class="text-3xl font-bold mb-6 dark:text-slate-50">Our Story</h3>
+        <div class="pl-4 border-l border-border mb-8">
+            <h4 class="text-xl italic font-medium dark:text-slate-100">
+                The Problem
+            </h4>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">
+                We noticed that students were juggling over seven different
+                platforms just to manage a single semester. Valuable cognitive
+                energy was being wasted on platform switching rather than
+                learning.
+            </p>
+        </div>
+        <div class="pl-4 border-l border-border">
+            <h4 class="text-xl italic mt-4 font-medium dark:text-slate-100">
+                The Solution
+            </h4>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">
+                ResKitt was born from the desire to create a "Digital Curator" -
+                a single, beautiful space that intelligently organizes the chaos
+                of academia into a cohesive, editorial experience.
+            </p>
+        </div>
+    </section>
+    <section
+        id="our-mission"
+        class="flex flex-col max-w-5xl mx-auto items-center justify-center my-16 border border-border rounded-2xl py-8 px-4 bg-slate-200 dark:bg-slate-800"
+    >
+        <h3 class="text-center text-primary text-xl font-medium mb-4">
+            OUR MISSION
+        </h3>
+        <p
+            class="text-3xl md:text-5xl text-center md:w-4/5 mx-auto dark:text-white leading-tight font-medium"
         >
-            <h3 class="text-center text-primary text-xl font-medium mb-4">
-                OUR MISSION
-            </h3>
-            <p
-                class="text-3xl md:text-5xl text-center md:w-4/5 mx-auto dark:text-white leading-tight font-medium"
-            >
-                "To transform information into intelligence through <span
-                    class="text-slate-700 dark:text-slate-200 italic"
-                    >atmospheric design</span
-                > and <span class="text-primary/90 underline"
-                    >seamless utility</span
-                >."
-            </p>
-            <p class="text-center mt-8 text-lg">
-                Empowering the next generation of scholars to think deeper and
-                work smarter.
-            </p>
-            <Button href="/" moreClasses="text-2xl text-white font-medium mt-8 w-full md:w-1/3">Get Started </Button><span class="mt-2 text-lg italic">No Signup Required</span>
-        </section>
-    </main>
+            "To transform information into intelligence through <span
+                class="text-slate-700 dark:text-slate-200 italic"
+                >atmospheric design</span
+            > and <span class="text-primary/90 underline">seamless utility</span
+            >."
+        </p>
+        <p class="text-center mt-8 text-lg">
+            Empowering the next generation of scholars to think deeper and work
+            smarter.
+        </p>
+        <Button
+            href="/"
+            moreClasses="text-2xl text-white font-medium mt-8 w-full md:w-1/3"
+            >Get Started
+        </Button><span class="mt-2 text-lg italic">No Signup Required</span>
+    </section>
 </BaseLayout>

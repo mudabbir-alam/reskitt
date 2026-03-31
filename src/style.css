@@ -2,6 +2,20 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@layer base {
+    body, body * {
+        @apply transition-colors duration-300 ease-in-out;
+    }
+}
+
+.toc-link.active {
+    @apply bg-primary/10 text-primary border-l-3 border-primary
+}
+
+.nav-link.active {
+    @apply border-b-2 border-primary
+}
+
 :root {
     --primary: #308ce8;
     --background: #f6f7f8cc;
